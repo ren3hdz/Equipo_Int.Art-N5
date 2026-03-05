@@ -1,0 +1,9 @@
+Lo primero que realizamos fue importar las librerías Pandas para el análisis de datos, Numpy, matplotlib para las gráficas y  sklearn para los mínimos y máximos.
+Después importamos el archivo de los datos del sensor del robot como un .csv
+Para imprimir los valores principales de la tabla utilizamos la librería de pandas as pd, y el comando pd.read_csv
+Para eliminar los valores nulos asignamos una nueva variable a la que llamaremos dat_clean y utilizaremos los datos antiguos guardados en una variable llamada dat con el comando dropna().copy()
+Para filtrar valores atípicos tomaremos cada una de las filas de los valores limpios y los evaluaremos teniendo en cuenta que sean mayores a 0 y los imprimiremos.
+Para los valores normalizados utilizaremos MinMaxscaler() aplicado sobre las 3 columnas que nos interesan que son distancia, velocidad y temperatura.
+Una vez que tengamos esas 3 columnas seleccionadas les aplicaremos el scaler.fit_transform para que todas se pongan en una escala de 0 a 1.
+Y para el diseño de las graficas usaremos plt.plot aplicado sobre la primera columna de tiempo de la primera tabla de datos limpios “dat_clean” y usaremos los valores normalizados como eje y, para esto seleccionamos la ubicación de la columna que deseamos (0, 1, 2) y solo aplicamos las etiquetas correspondientes.
+
